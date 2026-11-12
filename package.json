@@ -1,0 +1,26 @@
+{
+  "name": "lanren-ppt",
+  "version": "0.2.0",
+  "description": "懒人做 PPT：跟着 4 步向导点几下，得到一份深色、酷炫、能直接放映的网页 PPT（Slidev）。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lansike/lansike-lanren-ppt.git"
+  },
+  "private": true,
+  "type": "module",
+  "bin": {
+    "lanren-ppt": "bin/lanren-ppt.mjs"
+  },
+  "scripts": {
+    "start": "node scripts/start.mjs"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "dependencies": {
+    "@slidev/cli": "53.1.0",
+    "mammoth": "1.13.0",
+    "unpdf": "2.1.0"
+  }
+}

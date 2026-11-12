@@ -1,0 +1,8 @@
+node_modules/
+# 用户数据：本机 Key、生成的 PPT、需求单、inbox 视频、更新检查记录
+data/
+dist/
+# 日志与临时文件
+*.log
+.tmp/
+.npm-cache/

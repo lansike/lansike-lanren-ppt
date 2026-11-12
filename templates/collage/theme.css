@@ -1,0 +1,21 @@
+/* 拼贴海报：暗底上的蓝 / 粉 / 黄色块、网点、胶带，参考片的拼贴气质换成深色 */
+.lr { --bg: #12110f; --fg: #f6efe2; --muted: #b3aa9b; --line: rgba(246, 239, 226, .16); --a1: #3347ff; --a2: #ff2d87; --a3: #ffc414; --kicker: #ffc414; --glow: .18; --grain: .09; --radius: 0; --bar-radius: 0; }
+.lr::before { content: ""; position: absolute; z-index: 0; right: -60px; top: 80px; width: 420px; height: 420px; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(var(--a2) 28%, transparent 30%); background-size: 14px 14px; transform: rotate(-8deg); mask-image: linear-gradient(135deg, #000, transparent 70%); }
+.lr .lr-title { font-weight: 900; }
+.lr .lr-title, .lr .qt-text { text-shadow: 4px 4px 0 var(--a1); }
+.lr .cv-title { text-shadow: 6px 6px 0 var(--a2); }
+.lr .cv-kicker { display: inline-block; align-self: flex-start; padding: 8px 14px; background: var(--a3); color: #111; transform: rotate(-2deg); }
+.lr .pt-item { border: 0; padding: 18px 22px; background: var(--a1); color: #fff; transform: rotate(-.6deg); box-shadow: 6px 6px 0 rgba(0, 0, 0, .5); }
+.lr .pt-item:nth-child(2n) { background: var(--a2); transform: rotate(.6deg); }
+.lr .pt-item:nth-child(3n) { background: var(--a3); color: #111; }
+.lr .pt-item .pt-no { color: inherit; opacity: .8; }
+.lr .pt-item .pt-text { color: inherit; opacity: .85; }
+.lr .cp-card { background: var(--a1); border: 0; color: #fff; transform: rotate(-1deg); box-shadow: 8px 8px 0 rgba(0, 0, 0, .55); }
+.lr .cp-card + .cp-card { background: var(--a2); transform: rotate(1deg); }
+.lr .cp-head { color: #fff; }
+.lr .cp-card li::before { background: #fff; }
+.lr .lr-video { transform: rotate(1.5deg); box-shadow: 10px 10px 0 var(--a2); }
+.lr .lr-video::before { content: ""; position: absolute; z-index: 3; left: 40%; top: -10px; width: 120px; height: 30px; background: rgba(255, 196, 20, .85); transform: rotate(-4deg); }
+.lr .num-value { color: var(--a3); text-shadow: 8px 8px 0 var(--a2); }
+.lr .qt-mark { color: var(--a2); }

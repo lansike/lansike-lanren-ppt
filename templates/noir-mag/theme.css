@@ -1,0 +1,19 @@
+/* 深色杂志：墨黑底、奶油色衬线大字、一抹红，留白狠 */
+.lr { --font-head: "Noto Serif SC", "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --bg: #0d0b0a; --fg: #f3ece0; --muted: #918679; --line: rgba(243, 236, 224, .14); --a1: #ff3b2f; --a2: #c8a97e; --a3: #f3ece0; --glow: .12; --grain: .1; --radius: 0; }
+.lr .lr-top { border-bottom: 2px solid var(--fg); color: var(--fg); }
+.lr .lr-title { font-weight: 700; font-size: 66px; }
+.lr .cv-title { --cv-base: 132px; font-weight: 700; line-height: 1; }
+.lr .cv-kicker { color: var(--a1); }
+.lr .cv-kicker::before { content: "No. 01 — "; color: var(--muted); }
+.lr .cv-art .draw { stroke: var(--a1); stroke-width: 1; }
+.lr .pt-item { border-top: 1px solid var(--line); }
+.lr .pt-no { font-family: var(--font-head); font-size: 40px; font-style: italic; color: var(--a1); }
+.lr .bar-fill { background: var(--fg) !important; }
+.lr .bar-row:first-child .bar-fill { background: var(--a1) !important; }
+.lr .num-value { color: var(--fg); font-weight: 700; font-style: italic; }
+.lr .num-rule .draw { stroke: var(--a1); }
+.lr .qt-text { font-weight: 600; font-style: italic; }
+.lr .cp-card { background: transparent; border: 0; border-top: 3px solid var(--a1); padding-left: 0; }
+.lr .cp-card + .cp-card { border-top-color: var(--fg); --a1: var(--fg); }
+.lr .lr-video { outline: 1px solid var(--line); outline-offset: 12px; }

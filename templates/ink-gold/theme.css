@@ -1,0 +1,16 @@
+/* 学术沉稳：墨绿近黑、金色细线、衬线标题，克制的动效 */
+.lr { --font-head: "Noto Serif SC", "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --bg: #0a1311; --fg: #e8e3d6; --muted: #8b968f; --line: rgba(201, 164, 92, .28); --a1: #c9a45c; --a2: #6fa38f; --a3: #e8e3d6; --glow: .14; --grain: .06; --radius: 2px; }
+.lr::after { content: ""; position: absolute; inset: 22px; z-index: 0; pointer-events: none; border: 1px solid var(--line); outline: 1px solid rgba(201, 164, 92, .12); outline-offset: 6px; }
+.lr .lr-top { border-bottom: 0; }
+.lr .lr-top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.lr .lr-title { font-weight: 700; }
+.lr .cv-title { --cv-base: 108px; font-weight: 700; }
+.lr .cv-art .draw { stroke: var(--a1); stroke-width: 1; }
+.lr .pt-no { font-family: var(--font-head); font-size: 26px; color: var(--a1); }
+.lr .pt-no::after { content: " ·"; }
+.lr .bar-fill { background: linear-gradient(90deg, rgba(201, 164, 92, .5), var(--a1)) !important; }
+.lr .bar-row:nth-child(2n) .bar-fill { background: linear-gradient(90deg, rgba(111, 163, 143, .4), var(--a2)) !important; }
+.lr .num-value { font-weight: 700; }
+.lr .cp-card { background: rgba(201, 164, 92, .05); }
+.lr .lr-video { border: 1px solid var(--a1); }

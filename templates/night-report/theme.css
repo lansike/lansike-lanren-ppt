@@ -1,0 +1,13 @@
+/* 暗夜汇报：近黑底、薄荷绿 + 琥珀强调、细网格，数据感强、对比清晰 */
+.lr { --bg: #06080c; --fg: #eef3f6; --muted: #7f8c98; --line: rgba(255, 255, 255, .1); --a1: #2ef2c0; --a2: #ffb03a; --a3: #5b7cff; --glow: .22; --grain: .05; }
+.lr::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
+  background-size: 64px 64px; mask-image: radial-gradient(ellipse at 30% 40%, #000 20%, transparent 75%); }
+.lr .lr-title { letter-spacing: -.02em; }
+.lr .lr-title::after { content: ""; display: block; width: 72px; height: 4px; margin-top: 18px; background: var(--a1); box-shadow: 0 0 18px var(--a1); }
+.lr .cv-title .cv-ch { background: linear-gradient(180deg, #fff 35%, #8fa3b3); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lr .cv-title .cv-word:last-child .cv-ch:last-child { background: none; color: var(--a1); text-shadow: 0 0 40px color-mix(in srgb, var(--a1) 50%, transparent); }
+.lr-number .lr-title::after { display: none; }
+.lr .bar-fill { box-shadow: 0 0 22px color-mix(in srgb, var(--a1) 60%, transparent); }
+.lr .num-value { text-shadow: 0 0 60px color-mix(in srgb, var(--a1) 45%, transparent); }
+.lr .pt-item { border-top-color: rgba(46, 242, 192, .25); }

@@ -1,0 +1,16 @@
+/* 霓虹发布：深紫夜空、紫青渐变字、发光玻璃卡片、透视地平线 */
+.lr { --bg: #07031a; --fg: #f5f3ff; --muted: #a59ec9; --line: rgba(167, 139, 250, .2); --a1: #a855f7; --a2: #22d3ee; --a3: #f472b6; --kicker: #22d3ee; --glow: .4; --grain: .04; --radius: 18px; --bar-radius: 99px;
+  --card: rgba(255, 255, 255, .05); --video-shadow: 0 0 0 1px rgba(167, 139, 250, .4), 0 0 80px rgba(168, 85, 247, .45); }
+.lr::before { content: ""; position: absolute; z-index: 0; left: -20%; right: -20%; bottom: -10%; height: 45%; pointer-events: none;
+  background-image: linear-gradient(rgba(34, 211, 238, .35) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 85, 247, .35) 1px, transparent 1px);
+  background-size: 60px 60px; transform: perspective(500px) rotateX(62deg); transform-origin: bottom; mask-image: linear-gradient(transparent, #000 70%); animation: neon-run 3s linear infinite; }
+@keyframes neon-run { to { background-position: 0 60px; } }
+.lr .lr-title, .lr .num-value, .lr .cv-ch { background: linear-gradient(100deg, #fff 10%, var(--a1) 55%, var(--a2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lr .cv-ch { background: linear-gradient(170deg, #fff 25%, #c4a7ff 60%, var(--a2)); -webkit-background-clip: text; background-clip: text; }
+.lr .num-value { filter: drop-shadow(0 0 30px rgba(168, 85, 247, .6)); }
+.lr .pt-item { border: 1px solid var(--line); border-radius: 16px; padding: 18px 24px; background: var(--card); backdrop-filter: blur(10px); }
+.lr .pt-no { color: var(--a2); text-shadow: 0 0 12px var(--a2); }
+.lr .bar-fill { background: linear-gradient(90deg, var(--a1), var(--a2)) !important; box-shadow: 0 0 20px rgba(34, 211, 238, .5); }
+.lr .cp-card { backdrop-filter: blur(10px); box-shadow: 0 0 40px rgba(168, 85, 247, .15); }
+.lr .qt-mark { color: var(--a2); text-shadow: 0 0 30px var(--a2); }
+.lr .cv-art .draw { stroke: var(--a2); filter: drop-shadow(0 0 6px var(--a2)); }

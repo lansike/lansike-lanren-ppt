@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>懒人做 PPT</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="#"><b>懒人</b>做 PPT<span>LAZY · DECK</span></a>
+    <nav class="steps" id="steps"></nav>
+    <button class="ghost small" id="updBtn">检查更新</button>
+    <div class="upd" id="upd" hidden></div>
+  </header>
+
+  <main id="app"></main>
+
+  <template id="tpl-home">
+    <section class="screen home">
+      <p class="eyebrow">两种做法 · 选一种</p>
+      <h1>这份 PPT，<em>谁来写</em>？</h1>
+      <div class="cards two">
+        <button class="card" data-way="agent">
+          <svg viewBox="0 0 24 24" class="ico"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h5"/></svg>
+          <span class="badge">推荐</span>
+          <span class="card-name">用你的 Agent 做</span>
+          <span class="card-desc">不用 Key。Claude Code、Codex、Cursor 这类能跑命令的 Agent，用它自己的模型写内容，再调本工具出 PPT。</span>
+        </button>
+        <button class="card" data-way="web">
+          <svg viewBox="0 0 24 24" class="ico"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg>
+          <span class="card-name">直接在网页里做</span>
+          <span class="card-desc">需要一个模型 Key。跟着 4 步点一点，网页替你调模型写内容。</span>
+        </button>
+      </div>
+      <div class="say" id="say" hidden>
+        <p class="hint">把下面这句话发给你的 Agent，把「××」换成你的主题：</p>
+        <div class="say-box"><code id="sayText"></code><button class="primary" id="copy">复制</button></div>
+      </div>
+      <div class="effect">
+        <h3>效果说明</h3>
+        <ol>
+          <li>文字内容靠模型 Key（或你的 Agent 自己的模型）。</li>
+          <li>要视频填充，得另接视频生成接口：本工具不生成视频，只出视频需求单，做好的 mp4 放进来就嵌进页面。</li>
+          <li>要配图丰富，得另接图片生成接口。</li>
+          <li>最后做出来的效果，取决于你接的模型和接口的质量。</li>
+        </ol>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-key">
+    <section class="screen key">
+      <p class="eyebrow">直接在网页里做 · 需要一个模型 Key</p>
+      <h1>粘贴你的<em>模型 Key</em></h1>
+      <p class="lead">Key 用来让大模型替你写大纲和每页文字。到你用的模型平台（OpenAI、DeepSeek、通义千问、Kimi 等）控制台的「API Keys」里新建一个，复制过来。</p>
+      <form id="keyForm" class="keyform">
+        <input name="apiKey" class="big-input" placeholder="sk-..." autocomplete="off" spellcheck="false" required>
+        <details>
+          <summary>用的不是 OpenAI？改接口地址和模型</summary>
+          <label>接口地址<input name="baseURL" placeholder="https://api.openai.com/v1"></label>
+          <label>模型<input name="model" placeholder="gpt-4o-mini"></label>
+          <p class="hint">DeepSeek、通义千问、Kimi、本机 Ollama 等兼容 OpenAI 的接口都行，填它们给的地址和模型名。</p>
+        </details>
+        <button class="primary" type="submit"><b id="keyGo">保存，开始做 PPT</b> <span>→</span></button>
+        <p class="hint">Key 只存在这台电脑的 <code>data/config.local.json</code>，不会上传、不进仓库。</p>
+      </form>
+    </section>
+  </template>
+
+  <template id="tpl-making">
+    <section class="screen making">
+      <div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="eyebrow">正在生成 · 大约半分钟到两分钟</p>
+      <h1 id="makingStage">读懂你的想法</h1>
+      <ol class="stages" id="stages"></ol>
+    </section>
+  </template>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
